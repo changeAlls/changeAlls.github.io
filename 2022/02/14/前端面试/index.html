@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="前端面试第一.HTTP教程1.HTTP 协议一般指 HTTP（超文本传输协议）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试">
+<meta property="og:url" content="http://example.com/2022/02/14/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/index.html">
+<meta property="og:site_name" content="changeAllthing&#39;s Blog">
+<meta property="og:description" content="前端面试第一.HTTP教程1.HTTP 协议一般指 HTTP（超文本传输协议）。">
+<meta property="og:locale">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_11-48-55.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_11-59-39.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-01-19.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-07-03.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-38-30.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-41-14.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-41-55.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-48-47.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-57-37.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-57-52.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_12-58-05.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_13-01-00.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-14_20-25-32.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-14_20-25-47.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-14_20-25-59.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-14_21-16-33.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_16-04-13.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_16-06-54.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_16-15-11.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-14_13-28-45.jpg">
+<meta property="og:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/32be33a6a7e850c4cf5f2a94e973b31.jpg">
+<meta property="article:published_time" content="2022-02-14T14:05:12.000Z">
+<meta property="article:modified_time" content="2022-02-14T14:06:14.819Z">
+<meta property="article:author" content="罗乐恒">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="http">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/StudySource/DemoDateFile/TyporaFile/picture/Snipaste_2022-02-13_11-48-55.jpg">
+
+
+<link rel="canonical" href="http://example.com/2022/02/14/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"http://example.com/2022/02/14/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/","path":"2022/02/14/前端面试/","title":"前端面试"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>前端面试 | changeAllthing's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">changeAllthing's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">分享比得到更快乐</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">前端面试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80-HTTP%E6%95%99%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">第一.HTTP教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTTP-%E5%8D%8F%E8%AE%AE%E4%B8%80%E8%88%AC%E6%8C%87-HTTP%EF%BC%88%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%89%E3%80%82"><span class="nav-number">2.1.</span> <span class="nav-text">1.HTTP 协议一般指 HTTP（超文本传输协议）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTTP%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">2.HTTP工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%89%8D%E7%AB%AF%E6%80%8E%E4%B9%88%E5%8F%91%E9%80%81%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%EF%BC%9F"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.前端怎么发送网络请求？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-HTTP%E4%B8%89%E7%82%B9%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.HTTP三点注意事项：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-HTTP%E6%B6%88%E6%81%AF%E7%BB%93%E6%9E%84"><span class="nav-number">2.3.</span> <span class="nav-text">3.HTTP消息结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%B7%E6%B1%82%E4%BF%A1%E6%81%AF"><span class="nav-number">2.3.1.</span> <span class="nav-text">1.客户端请求信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%93%8D%E5%BA%94%E6%B6%88%E6%81%AF"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.服务器响应消息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">4.请求方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-HTTP%E5%93%8D%E5%BA%94%E5%A4%B4%E4%BF%A1%E6%81%AF"><span class="nav-number">2.5.</span> <span class="nav-text">5.HTTP响应头信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-HTTP%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">2.6.</span> <span class="nav-text">6.HTTP状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%8A%B6%E6%80%81%E7%A0%81%E5%88%86%E7%B1%BB"><span class="nav-number">2.6.1.</span> <span class="nav-text">1.状态码分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-HTTP-content-type"><span class="nav-number">2.7.</span> <span class="nav-text">7.HTTP content-type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8B%E7%BD%91%E9%A1%B5%E7%9A%84%E8%AF%B7%E6%B1%82%E4%BF%A1%E6%81%AF%E5%92%8C%E5%93%8D%E5%BA%94%E4%BF%A1%E6%81%AF"><span class="nav-number">2.8.</span> <span class="nav-text">8.如何使用浏览器查看网页的请求信息和响应信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C-SQL%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.</span> <span class="nav-text">第二 SQL语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-SQL%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">3.1.</span> <span class="nav-text">1.SQL是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SQL%E8%AF%AD%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">2.SQL语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="nav-number">3.2.1.</span> <span class="nav-text">1.数据库表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.数据库数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">1.数值类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">2.日期和时间类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">3.字符串类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-DDL%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%95%B4%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%EF%BC%89"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.DDL（对于整个数据库的基本操作）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9A"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">1.查看所有数据库：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E5%88%87%E6%8D%A2%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9A"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">2.切换数据库：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9A"><span class="nav-number">3.2.3.3.</span> <span class="nav-text">3.创建数据库：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9A"><span class="nav-number">3.2.3.4.</span> <span class="nav-text">4.删除数据库：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%9A"><span class="nav-number">3.2.3.5.</span> <span class="nav-text">5.创建数据表：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%A1%A8%EF%BC%9A"><span class="nav-number">3.2.3.6.</span> <span class="nav-text">6.查看所有表：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%EF%BC%9A"><span class="nav-number">3.2.3.7.</span> <span class="nav-text">7.删除数据库表：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-number">3.2.3.8.</span> <span class="nav-text">8.查看表结构：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-DML"><span class="nav-number">3.2.4.</span> <span class="nav-text">4.DML</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.4.1.</span> <span class="nav-text">1.插入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E6%97%A0%E9%9C%80%E6%8C%87%E5%AE%9A%E6%8F%92%E5%85%A5%E5%88%97%E5%90%8D%EF%BC%9A"><span class="nav-number">3.2.4.1.1.</span> <span class="nav-text">1.无需指定插入列名：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E9%9C%80%E8%A6%81%E6%8C%87%E5%AE%9A%E6%8F%92%E5%85%A5%E5%88%97%E5%90%8D%EF%BC%9A"><span class="nav-number">3.2.4.1.2.</span> <span class="nav-text">2.需要指定插入列名：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E4%B8%AD%E6%9F%90%E4%BA%9B%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.4.2.</span> <span class="nav-text">2.修改表中某些数据</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E4%BF%AE%E6%94%B9%E8%A1%A8%E4%B8%AD%E5%85%A8%E9%83%A8%E6%95%B0%E6%8D%AE%EF%BC%88%E6%B2%A1%E6%9C%89where%EF%BC%89"><span class="nav-number">3.2.4.2.1.</span> <span class="nav-text">1.修改表中全部数据（没有where）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E4%B8%AD%E9%83%A8%E5%88%86%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.4.2.2.</span> <span class="nav-text">2.修改表中部分数据</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%88%A0%E9%99%A4%E8%A1%A8%E4%B8%AD%E6%9F%90%E8%A1%8C%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.4.3.</span> <span class="nav-text">3.删除表中某行数据</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-DQL"><span class="nav-number">3.2.5.</span> <span class="nav-text">4.DQL</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-select-from-%E8%A1%A8%E5%90%8D"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">1.select * from 表名;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-select-column1-column2-column3-%E2%80%A6-from-%E8%A1%A8%E5%90%8D%EF%BC%9B"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">2.select column1,column2,column3,…. from 表名；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-select-distinct-%E8%AF%AD%E6%B3%95"><span class="nav-number">3.2.5.3.</span> <span class="nav-text">3.select distinct 语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-where%E5%AD%90%E5%8F%A5%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.2.5.4.</span> <span class="nav-text">4.where子句中的运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-where-%E5%AD%90%E5%8F%A5"><span class="nav-number">3.2.5.5.</span> <span class="nav-text">5.where 子句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-AND-amp-OR%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.2.5.6.</span> <span class="nav-text">6.AND &amp; OR运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-ORDER-BY-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.2.5.7.</span> <span class="nav-text">7.ORDER BY 关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-%E7%89%B9%E6%AE%8A%E6%9F%A5%E8%AF%A2%E6%B3%95"><span class="nav-number">3.2.5.8.</span> <span class="nav-text">8.特殊查询法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E7%A9%BA%E5%80%BC%E5%88%A4%E6%96%AD%EF%BC%9A"><span class="nav-number">3.2.5.8.1.</span> <span class="nav-text">1.空值判断：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-between-and"><span class="nav-number">3.2.5.8.2.</span> <span class="nav-text">2.between and</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-1-not-between-and"><span class="nav-number">3.2.5.8.3.</span> <span class="nav-text">2.1 not between and</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-in"><span class="nav-number">3.2.5.8.4.</span> <span class="nav-text">3.in</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-like%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="nav-number">3.2.5.8.5.</span> <span class="nav-text">4.like模糊查询</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-LIMIT%E5%AD%90%E5%8F%A5"><span class="nav-number">3.2.5.8.6.</span> <span class="nav-text">5.LIMIT子句</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-AS%E5%8F%96%E5%88%AB%E5%90%8D"><span class="nav-number">3.2.5.8.7.</span> <span class="nav-text">6.AS取别名</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89-%E9%9D%A2%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="nav-number">4.</span> <span class="nav-text">第三 面试技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.1.</span> <span class="nav-text">1.自我介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9C%80%E5%90%8E%E6%A8%A1%E6%9D%BF%EF%BC%9A"><span class="nav-number">4.2.</span> <span class="nav-text">2.最后模板：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%9B%85%E4%B8%BD%E7%BB%99%E6%88%91%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.3.</span> <span class="nav-text">3.雅丽给我自我介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A8%A1%E6%9D%BF"><span class="nav-number">4.4.</span> <span class="nav-text">4.前端开发模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%B8%AD%E6%96%87%E7%89%88%E6%9C%AC"><span class="nav-number">4.4.1.</span> <span class="nav-text">1.中文版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E8%8B%B1%E6%96%87%E7%89%88"><span class="nav-number">4.4.2.</span> <span class="nav-text">2.英文版</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B-%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">第四 面试问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CPU%E5%92%8C%E5%86%85%E5%AD%98%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">5.1.</span> <span class="nav-text">1.CPU和内存的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%BE%93%E5%85%A5%E7%BD%91%E5%9D%80%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E5%91%88%E7%8E%B0%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">5.2.</span> <span class="nav-text">2.输入网址之后，页面呈现的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%89%8D%E7%AB%AF%E5%8F%91%E8%B5%B7%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">5.3.</span> <span class="nav-text">3.前端发起网络请求的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E7%9A%84src%E8%AF%B7%E6%B1%82"><span class="nav-number">5.4.</span> <span class="nav-text">图片的src请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#form-%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4"><span class="nav-number">5.5.</span> <span class="nav-text">form 表单提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe-%E9%93%BE%E6%8E%A5"><span class="nav-number">5.6.</span> <span class="nav-text">iframe 链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94-%E9%9D%A2%E8%AF%95%E5%85%AC%E5%8F%B8"><span class="nav-number">6.</span> <span class="nav-text">第五 面试公司</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%98%93%E4%BF%9D%E7%BD%91%E7%BB%9C%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%AE%9E%E4%B9%A0%E7%94%9F"><span class="nav-number">6.1.</span> <span class="nav-text">1.易保网络：前端开发实习生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%AB%98%E7%9F%A5%E7%89%B9%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%AE%A1%E5%9F%B9%E7%94%9F"><span class="nav-number">6.2.</span> <span class="nav-text">2.高知特：前端开发管培生</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="罗乐恒"
+      src="/uploads/headphoto.jpg">
+  <p class="site-author-name" itemprop="name">罗乐恒</p>
+  <div class="site-description" itemprop="description">临渊羡鱼，不如退而结网</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/changeAlls" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;changeAlls" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2539872560@qq.com" title="E-Mail → mailto:2539872560@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.github.com/" title="https:&#x2F;&#x2F;www.github.com" rel="noopener" target="_blank">Github</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.zhihu.com/" title="https:&#x2F;&#x2F;www.zhihu.com" rel="noopener" target="_blank">知乎</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/14/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/headphoto.jpg">
+      <meta itemprop="name" content="罗乐恒">
+      <meta itemprop="description" content="临渊羡鱼，不如退而结网">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="changeAllthing's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端面试
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-02-14 22:05:12 / 修改时间：22:06:14" itemprop="dateCreated datePublished" datetime="2022-02-14T22:05:12+08:00">2022-02-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前端面试"><a href="#前端面试" class="headerlink" title="前端面试"></a>前端面试</h2><h2 id="第一-HTTP教程"><a href="#第一-HTTP教程" class="headerlink" title="第一.HTTP教程"></a>第一.HTTP教程</h2><h3 id="1-HTTP-协议一般指-HTTP（超文本传输协议）。"><a href="#1-HTTP-协议一般指-HTTP（超文本传输协议）。" class="headerlink" title="1.HTTP 协议一般指 HTTP（超文本传输协议）。"></a>1.HTTP 协议一般指 HTTP（超文本传输协议）。<span id="more"></span></h3><p>超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议，是因特网上应用最为广泛的一种网络传输协议，所有的 WWW 文件都必须遵守这个标准。</p>
+<p><strong>HTTP是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）。</strong></p>
+<h3 id="2-HTTP工作原理"><a href="#2-HTTP工作原理" class="headerlink" title="2.HTTP工作原理"></a>2.HTTP工作原理</h3><h4 id="1-前端怎么发送网络请求？"><a href="#1-前端怎么发送网络请求？" class="headerlink" title="1.前端怎么发送网络请求？"></a>1.前端怎么发送网络请求？</h4><p><strong>http协议工作于客户端-服务端架构上，浏览器作为http客户端通过URL向 HTTP服务端发送所有请求。</strong></p>
+<p>Web服务器有：Apache服务器，IIS服务器（Internet Information Services）等。</p>
+<p><strong>Web服务器根据接收到的请求后，向客户端发送响应信息。</strong></p>
+<h4 id="2-HTTP三点注意事项："><a href="#2-HTTP三点注意事项：" class="headerlink" title="2.HTTP三点注意事项："></a>2.HTTP三点注意事项：</h4><ol>
+<li><p>HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。<strong>传输数据之前需要3次握手</strong></p>
+</li>
+<li><p>HTTP是媒体独立的：只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。<strong>客户端以及服务器指定使用适合的MIME-type内容类型。</strong></p>
+</li>
+<li><p>HTTP是无状态的：无状态是指协议对于事务处理没有记忆能力。</p>
+<p><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_11-48-55.jpg" alt="Snipaste_2022-02-13_11-48-55"></p>
+</li>
+</ol>
+<h3 id="3-HTTP消息结构"><a href="#3-HTTP消息结构" class="headerlink" title="3.HTTP消息结构"></a>3.HTTP消息结构</h3><p><strong>一个HTTP”客户端”是一个应用程序</strong>（Web浏览器或其他任何客户端），通过连接到服务器达到向服务器发送一个或多个HTTP的请求的目的。</p>
+<p><strong>一个HTTP”服务器”同样也是一个应用程序</strong>（通常是一个Web服务，如Apache Web服务器或IIS服务器等），<strong>通过接收客户端的请求并向客户端发送HTTP响应数据。</strong></p>
+<p>HTTP使用<strong>统一资源标识符（Uniform Resource Identifiers, URI）</strong>来传输数据和建立连接。</p>
+<h4 id="1-客户端请求信息"><a href="#1-客户端请求信息" class="headerlink" title="1.客户端请求信息"></a>1.客户端请求信息</h4><p><strong>客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成。</strong><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_11-59-39.jpg" alt="Snipaste_2022-02-13_11-59-39"></p>
+<h4 id="2-服务器响应消息"><a href="#2-服务器响应消息" class="headerlink" title="2.服务器响应消息"></a>2.服务器响应消息</h4><p>HTTP响应也由四个部分组成，分别是：<strong>状态行、消息报头、空行和响应正文。</strong><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-01-19.jpg" alt="Snipaste_2022-02-13_12-01-19"><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-07-03.jpg" alt="Snipaste_2022-02-13_12-07-03"></p>
+<h3 id="4-请求方式"><a href="#4-请求方式" class="headerlink" title="4.请求方式"></a>4.请求方式</h3><p><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-38-30.jpg" alt="Snipaste_2022-02-13_12-38-30"></p>
+<h3 id="5-HTTP响应头信息"><a href="#5-HTTP响应头信息" class="headerlink" title="5.HTTP响应头信息"></a>5.HTTP响应头信息</h3><p><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-41-14.jpg" alt="Snipaste_2022-02-13_12-41-14"></p>
+<p><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-41-55.jpg" alt="Snipaste_2022-02-13_12-41-55"></p>
+<h3 id="6-HTTP状态码"><a href="#6-HTTP状态码" class="headerlink" title="6.HTTP状态码"></a>6.HTTP状态码</h3><p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含 HTTP 状态码的信息头（server header）用以响应浏览器的请求。</p>
+<p>HTTP 状态码的英文为 <strong>HTTP Status Code</strong>。</p>
+<p>下面是常见的 HTTP 状态码：</p>
+<ul>
+<li>200 - 请求成功</li>
+<li>301 - 资源（网页等）被永久转移到其它URL</li>
+<li>404 - 请求的资源（网页等）不存在</li>
+<li>500 - 内部服务器错误</li>
+</ul>
+<h4 id="1-状态码分类"><a href="#1-状态码分类" class="headerlink" title="1.状态码分类"></a>1.状态码分类</h4><p><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-48-47.jpg" alt="Snipaste_2022-02-13_12-48-47"><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-57-37.jpg" alt="Snipaste_2022-02-13_12-57-37"><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-57-52.jpg" alt="Snipaste_2022-02-13_12-57-52"><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_12-58-05.jpg" alt="Snipaste_2022-02-13_12-58-05"></p>
+<h3 id="7-HTTP-content-type"><a href="#7-HTTP-content-type" class="headerlink" title="7.HTTP content-type"></a>7.HTTP content-type</h3><p>Content-Type（内容类型），一般是指网页中存在的 Content-Type，用于定义网络文件的类型和网页的编码，决定浏览器将以什么形式、什么编码读取这个文件，这就是经常看到一些 PHP 网页点击的结果却是下载一个文件或一张图片的原因。</p>
+<p><strong>Content-Type 标头告诉客户端实际返回的内容的内容类型。</strong></p>
+<p><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_13-01-00.jpg" alt="Snipaste_2022-02-13_13-01-00"></p>
+<h3 id="8-如何使用浏览器查看网页的请求信息和响应信息"><a href="#8-如何使用浏览器查看网页的请求信息和响应信息" class="headerlink" title="8.如何使用浏览器查看网页的请求信息和响应信息"></a>8.如何使用浏览器查看网页的请求信息和响应信息</h3><p>打开任何一个浏览器，按F12，选择网络（NetWork），任意选择一个资源，查看标头（Header），查看请求和响应信息。</p>
+<h2 id="第二-SQL语句"><a href="#第二-SQL语句" class="headerlink" title="第二 SQL语句"></a>第二 SQL语句</h2><h3 id="1-SQL是什么"><a href="#1-SQL是什么" class="headerlink" title="1.SQL是什么"></a>1.SQL是什么</h3><p><strong>sql是结构化查询语言，可以处理数据库，包括数据插入、删除、查询、更新。</strong></p>
+<h3 id="2-SQL语法"><a href="#2-SQL语法" class="headerlink" title="2.SQL语法"></a>2.SQL语法</h3><h4 id="1-数据库表"><a href="#1-数据库表" class="headerlink" title="1.数据库表"></a>1.数据库表</h4><p><strong>一个数据库通常包括一个或多个表，每个表有一个名字标识，表包含带有数据的记录（行）。</strong></p>
+<h4 id="2-数据库数据类型"><a href="#2-数据库数据类型" class="headerlink" title="2.数据库数据类型"></a>2.数据库数据类型</h4><p>MySQL 支持多种类型，大致可以分为三类：<strong>数值、日期/时间和字符串(字符)类型。</strong></p>
+<h5 id="1-数值类型"><a href="#1-数值类型" class="headerlink" title="1.数值类型"></a>1.数值类型</h5><p>其中INT、FLOAT、DOUBLE是常用类型，具体表如下：</p>
+<img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-14_20-25-32.jpg" alt="Snipaste_2022-02-14_20-25-32" style="zoom:67%;" />
+
+<h5 id="2-日期和时间类型"><a href="#2-日期和时间类型" class="headerlink" title="2.日期和时间类型"></a>2.日期和时间类型</h5><p>表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。</p>
+<img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-14_20-25-47.jpg" alt="Snipaste_2022-02-14_20-25-47" style="zoom:67%;" />
+
+<h5 id="3-字符串类型"><a href="#3-字符串类型" class="headerlink" title="3.字符串类型"></a>3.字符串类型</h5><p>char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存储 30 个字符。</p>
+<p>CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。</p>
+<img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-14_20-25-59.jpg" alt="Snipaste_2022-02-14_20-25-59" style="zoom:67%;" />
+
+<h4 id="3-DDL（对于整个数据库的基本操作）"><a href="#3-DDL（对于整个数据库的基本操作）" class="headerlink" title="3.DDL（对于整个数据库的基本操作）"></a>3.DDL（对于整个数据库的基本操作）</h4><h5 id="1-查看所有数据库："><a href="#1-查看所有数据库：" class="headerlink" title="1.查看所有数据库："></a>1.查看所有数据库：</h5><p>​        show databases;</p>
+<h5 id="2-切换数据库："><a href="#2-切换数据库：" class="headerlink" title="2.切换数据库："></a>2.切换数据库：</h5><p>​        use 数据库名；</p>
+<h5 id="3-创建数据库："><a href="#3-创建数据库：" class="headerlink" title="3.创建数据库："></a>3.创建数据库：</h5><ol>
+<li>create database 数据库名；</li>
+<li>CREATE DATABASE [IF NOT EXISTS] 数据库名 [CHARSET=UTF8]; 中括号表示可选内容，<strong>写语句的时候不能把中括号写上去</strong></li>
+</ol>
+<h5 id="4-删除数据库："><a href="#4-删除数据库：" class="headerlink" title="4.删除数据库："></a>4.删除数据库：</h5><ol>
+<li>drop database 数据库名；</li>
+<li>drop database if exists 数据库名；</li>
+</ol>
+<h5 id="5-创建数据表："><a href="#5-创建数据表：" class="headerlink" title="5.创建数据表："></a>5.创建数据表：</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (column_name column_type);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> if  <span class="keyword">not</span>  <span class="keyword">exists</span> table_name(</span><br><span class="line">   runoob_id <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">   runoob_title <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">   runoob_author <span class="type">VARCHAR</span>(<span class="number">40</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">   submission_date <span class="type">DATE</span>,</span><br><span class="line">   <span class="keyword">PRIMARY</span> KEY ( runoob_id )</span><br><span class="line">   )ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8;</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-查看所有表："><a href="#6-查看所有表：" class="headerlink" title="6.查看所有表："></a>6.查看所有表：</h5><p>​        show tables;</p>
+<h5 id="7-删除数据库表："><a href="#7-删除数据库表：" class="headerlink" title="7.删除数据库表："></a>7.删除数据库表：</h5><p>​        DROP TABLE table_name ;</p>
+<h5 id="8-查看表结构："><a href="#8-查看表结构：" class="headerlink" title="8.查看表结构："></a>8.查看表结构：</h5><p>​        desc 表名;</p>
+<h4 id="4-DML"><a href="#4-DML" class="headerlink" title="4.DML"></a>4.DML</h4><h5 id="1-插入数据"><a href="#1-插入数据" class="headerlink" title="1.插入数据"></a>1.插入数据</h5><h6 id="1-无需指定插入列名："><a href="#1-无需指定插入列名：" class="headerlink" title="1.无需指定插入列名："></a>1.无需指定插入列名：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO TABLE_NAME</span><br><span class="line">VALUES(VALUE1,VALUE2,VALUE3,..);</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-需要指定插入列名："><a href="#2-需要指定插入列名：" class="headerlink" title="2.需要指定插入列名："></a>2.需要指定插入列名：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name (column1,column2,column3,...)</span><br><span class="line">VALUES (value1,value2,value3,...);</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-修改表中某些数据"><a href="#2-修改表中某些数据" class="headerlink" title="2.修改表中某些数据"></a>2.修改表中某些数据</h5><h6 id="1-修改表中全部数据（没有where）"><a href="#1-修改表中全部数据（没有where）" class="headerlink" title="1.修改表中全部数据（没有where）"></a>1.修改表中全部数据（没有where）</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update table_name</span><br><span class="line">set column1=value1,column1=value,....</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-修改表中部分数据"><a href="#2-修改表中部分数据" class="headerlink" title="2.修改表中部分数据"></a>2.修改表中部分数据</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update table_name</span><br><span class="line">set column1=value1,column2=value2,...</span><br><span class="line">where some_column=some_value;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-删除表中某行数据"><a href="#3-删除表中某行数据" class="headerlink" title="3.删除表中某行数据"></a>3.删除表中某行数据</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete from table_name</span><br><span class="line">where some_column=some_value;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-DQL"><a href="#4-DQL" class="headerlink" title="4.DQL"></a>4.DQL</h4><h5 id="1-select-from-表名"><a href="#1-select-from-表名" class="headerlink" title="1.select * from 表名;"></a>1.select * from 表名;</h5><p>查询全部表中数据；</p>
+<h5 id="2-select-column1-column2-column3-…-from-表名；"><a href="#2-select-column1-column2-column3-…-from-表名；" class="headerlink" title="2.select column1,column2,column3,…. from 表名；"></a>2.select column1,column2,column3,…. from 表名；</h5><p>查询表中部分列的数据。</p>
+<h5 id="3-select-distinct-语法"><a href="#3-select-distinct-语法" class="headerlink" title="3.select distinct 语法"></a>3.select distinct 语法</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT column_name,column_name</span><br><span class="line">FROM table_name;</span><br></pre></td></tr></table></figure>
+
+<p>去除相同数据，只显示唯一值。</p>
+<h5 id="4-where子句中的运算符"><a href="#4-where子句中的运算符" class="headerlink" title="4.where子句中的运算符"></a>4.where子句中的运算符</h5><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-14_21-16-33.jpg" alt="Snipaste_2022-02-14_21-16-33" style="zoom:67%;" />
+
+<h5 id="5-where-子句"><a href="#5-where-子句" class="headerlink" title="5.where 子句"></a>5.where 子句</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name,column_name</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name operator value;</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-AND-amp-OR运算符"><a href="#6-AND-amp-OR运算符" class="headerlink" title="6.AND &amp; OR运算符"></a>6.AND &amp; OR运算符</h5><p><strong>如果第一个条件和第二个条件都成立，则 AND 运算符显示一条记录。</strong></p>
+<p><strong>如果第一个条件和第二个条件中只要有一个成立，则 OR 运算符显示一条记录。</strong></p>
+<p>AND 和OR既可以分开使用，也可以合并使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM Websites</span><br><span class="line">WHERE alexa &gt; 15</span><br><span class="line">AND (country=&#x27;CN&#x27; OR country=&#x27;USA&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-ORDER-BY-关键字"><a href="#7-ORDER-BY-关键字" class="headerlink" title="7.ORDER BY 关键字"></a>7.ORDER BY 关键字</h5><p>order by 默认是升序排列，语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name,column_name</span><br><span class="line">FROM table_name</span><br><span class="line">ORDER BY column_name,column_name ASC|DESC;</span><br></pre></td></tr></table></figure>
+
+<h5 id="8-特殊查询法"><a href="#8-特殊查询法" class="headerlink" title="8.特殊查询法"></a>8.特殊查询法</h5><h6 id="1-空值判断："><a href="#1-空值判断：" class="headerlink" title="1.空值判断："></a>1.空值判断：</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> comm <span class="keyword">is</span> <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询 emp 表中 comm 列中的空值。</p>
+<h6 id="2-between-and"><a href="#2-between-and" class="headerlink" title="2.between and"></a>2.between and</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select * from emp where sal between 1500 and 3000;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-1-not-between-and"><a href="#2-1-not-between-and" class="headerlink" title="2.1 not between and"></a>2.1 not between and</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM Websites</span><br><span class="line">WHERE alexa NOT BETWEEN 1 AND 20;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-in"><a href="#3-in" class="headerlink" title="3.in"></a>3.in</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select * from emp where sal in (5000,3000,1500);</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-like模糊查询"><a href="#4-like模糊查询" class="headerlink" title="4.like模糊查询"></a>4.like模糊查询</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select * from emp where ename like &#x27;M%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li> <strong>%</strong> 表示多个字值，**_** 下划线表示一个字符；</li>
+<li> <strong>M%</strong> : 为能配符，正则表达式，表示的意思为模糊查询信息为 M 开头的。</li>
+<li> <strong>%M%</strong> : 表示查询包含M的所有内容。</li>
+<li> <strong>%M_</strong> : 表示查询以M在倒数第二位的所有内容。</li>
+</ul>
+<h6 id="5-LIMIT子句"><a href="#5-LIMIT子句" class="headerlink" title="5.LIMIT子句"></a>5.LIMIT子句</h6><p>MySQL数据库可以使用LIMIT</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">LIMIT number;</span><br></pre></td></tr></table></figure>
+
+<h6 id="6-AS取别名"><a href="#6-AS取别名" class="headerlink" title="6.AS取别名"></a>6.AS取别名</h6><ol>
+<li><p>列的别名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name AS alias_name</span><br><span class="line">FROM table_name;</span><br></pre></td></tr></table></figure></li>
+<li><p>表的别名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name AS alias_name;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="第三-面试技巧"><a href="#第三-面试技巧" class="headerlink" title="第三 面试技巧"></a>第三 面试技巧</h2><h3 id="1-自我介绍"><a href="#1-自我介绍" class="headerlink" title="1.自我介绍"></a>1.自我介绍</h3><p>1.大体框架</p>
+<img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_16-04-13.jpg" alt="Snipaste_2022-02-13_16-04-13" style="zoom:80%;" />
+
+<p>2.详细细节</p>
+<img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_16-06-54.jpg" alt="Snipaste_2022-02-13_16-06-54" style="zoom:80%;" />
+
+<p>3.主要内容</p>
+<img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-13_16-15-11.jpg" alt="Snipaste_2022-02-13_16-15-11" style="zoom:80%;" />
+
+<h3 id="2-最后模板："><a href="#2-最后模板：" class="headerlink" title="2.最后模板："></a>2.最后模板：</h3><p>面试官您好，我叫罗丁柱，来自防灾科技学院计算机科学与技术专业，今年23岁，很荣幸能够参加本次面试。我将从学习、项目经历、课外经历等方面介绍自己。</p>
+<p>在学习上，我认真刻苦，成绩优秀；如在大学四年中，我的成绩一直保持在班级的前10%，也曾在大二学年获得校级三好学生。</p>
+<p>在项目经历上，我学习过数据结构、计算机网络、操作系统等课程，并都取得不错的成绩；并且大二暑期实训期间，我组织同学一同设计并开发了自习室选座微信小程序，并在其中负责前端页面的开发，最终实训成绩84分。</p>
+<p>在课外时间上，我能够吃苦耐劳，具有团队精神。我多次在寒暑假期间，兼职工作帮助家庭节省开支。也多次参加学校举办的活动，帮助学院和班级取得好成绩。</p>
+<p>最后，就我个人而言，我认为前端开发的发展前景很好，自己应该不断学习新的技术，朝着优秀前端开发工程师而努力奋斗。</p>
+<p>以上就是我的自我介绍，谢谢。</p>
+<h3 id="3-雅丽给我自我介绍"><a href="#3-雅丽给我自我介绍" class="headerlink" title="3.雅丽给我自我介绍"></a>3.雅丽给我自我介绍</h3><p><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\Snipaste_2022-02-14_13-28-45.jpg" alt="Snipaste_2022-02-14_13-28-45"></p>
+<h3 id="4-前端开发模板"><a href="#4-前端开发模板" class="headerlink" title="4.前端开发模板"></a>4.前端开发模板</h3><h4 id="1-中文版本"><a href="#1-中文版本" class="headerlink" title="1.中文版本"></a>1.中文版本</h4><p>下午好，面试官，我叫罗丁柱，来自隶属于中国地震局的一所学校——防灾科技学院；在校期间，我的成绩优异，获得过三好学生，爱好打篮球，曾获得学院篮球比赛团体冠军。在项目经历上，我曾组织同学一起设计并开发自习室选座小程序，并负责开发前端页面。日常生活中，我积极参加各类活动，和同学相处都很融洽。以上就是我的自我介绍，很荣幸能够参加本次面试，谢谢。</p>
+<h4 id="2-英文版"><a href="#2-英文版" class="headerlink" title="2.英文版"></a>2.英文版</h4><p>Good afternoon, interviewer. My name is Luo Dingzhu. I come from the Institute of disaster prevention science and technology, a school affiliated to the China Seismological Bureau; During school, I got excellent grades, won three good students, loved playing basketball, and won the team championship of college basketball competition. In terms of project experience, I once organized my classmates to design and develop a seat selection applet in the self-study room, and was responsible for developing the front-end page. In my daily life, I actively participate in various activities and get along well with my classmates. The above is my self introduction. It’s a great honor to participate in this interview. Thank you.</p>
+<h2 id="第四-面试问题"><a href="#第四-面试问题" class="headerlink" title="第四 面试问题"></a>第四 面试问题</h2><h3 id="1-CPU和内存的区别"><a href="#1-CPU和内存的区别" class="headerlink" title="1.CPU和内存的区别"></a>1.CPU和内存的区别</h3><ol>
+<li><p>CPU，即中央处理器：CPU是一台计算机的运算核心，相当于计算机的大脑。</p>
+<p><strong>CPU是一块超大规模的集成电路，是一台计算机的运算核心和控制核心。它的功能主要是解释计算机指令以及处理计算机软件中的数据。</strong>计算机的性能在很大程度上由CPU的性能决定，而CPU的性能主要体现在其运行程序的速度上。影响运行速度的性能指标包括CPU的工作频率、Cache容量、指令系统和逻辑结构等参数。</p>
+</li>
+<li><p><strong>作用是用于暂时存放CPU中的运算数据，以及与硬盘等外部存储器交换的数据，内存是计算机的“中转站”，待处理的数据和处理好待输出或储存的数据都会暂时存放在内存里。</strong>内存是计算机中重要的部件之一，它是与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，因此内存的性能对计算机的影响非常大。</p>
+</li>
+<li><p>比较三种存储器：硬盘、内存和高速存储器的存取速度，我们发现：</p>
+<p><strong>内存的存取速度远高于硬盘的存取速度，而CPU内高速存储器的存取速度更是远高于内存的存取速度。</strong></p>
+<p><strong>当我们把程序从硬盘放到内存以后，CPU就直接在内存运行程序，这样比CPU直接在硬盘运行程序就要快很</strong></p>
+<p><strong>多。</strong></p>
+<p>内存解决了一部分CPU运行过快，而硬盘数据存取太慢的问题。 提高了我们的电脑的运行速度。</p>
+</li>
+</ol>
+<h3 id="2-输入网址之后，页面呈现的过程"><a href="#2-输入网址之后，页面呈现的过程" class="headerlink" title="2.输入网址之后，页面呈现的过程"></a>2.输入网址之后，页面呈现的过程</h3><ol>
+<li>DNS （Domain Name Server）<strong>域名解析</strong>：浏览器查询 DNS，获取域名对应的 IP 地址。查找顺序为：浏览器 、缓存系统的缓存、本地的hosts文件、本地DNS服务器、递归查询、迭代查询。</li>
+<li><strong>TCP 连接</strong>：浏览器获得域名对应的 IP 地址以后，<strong>浏览器向服务器请求建立链接，发起三次握手</strong>；</li>
+<li><strong>发送 HTTP 请求</strong>：TCP 连接建立起来后，浏览器向服务器发送 HTTP 请求；</li>
+<li><strong>服务器处理请求并返回HTTP报文</strong>：服务器接收到这个请求，并根据路径参数映射到特定的请求处理器进行处理，并将处理结果及相应的视图返回给浏览器。</li>
+<li><strong>浏览器解析渲染页面</strong>：浏览器解析并渲染视图，若遇到对 js 文件、css 文件及图片等静态资源的引用，则重复上述步骤并向服务器请求这些资源；浏览器根据其请求到的资源、数据渲染页面，最终向用户呈现一个完整的页面。</li>
+<li><strong>TCP断开连接</strong>：为什么现在结束？浏览器在解析过程中，如果遇到请求外部资源时，如图像,iconfont,JS等。浏览器将重复1-5过程下载该资源。<br><strong>简要回答</strong></li>
+</ol>
+<p>a.域名解析<br>b.发起TCP连接的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&spm=1001.2101.3001.7020">三次握手</a><br>c.建立TCP连接后发起http请求<br>d.服务端响应http请求，返回响应报文<br>e.浏览器页面渲染<br>f.断开TCP连接</p>
+<h3 id="3-前端发起网络请求的方式"><a href="#3-前端发起网络请求的方式" class="headerlink" title="3.前端发起网络请求的方式"></a>3.前端发起网络请求的方式</h3><ol>
+<li><h3 id="图片的src请求"><a href="#图片的src请求" class="headerlink" title="图片的src请求"></a>图片的src请求</h3></li>
+<li><h3 id="form-表单提交"><a href="#form-表单提交" class="headerlink" title="form 表单提交"></a>form 表单提交</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/url&quot; method=&quot;post&quot;&gt;</span><br><span class="line">   &lt;input type=&quot;text&quot; name=&quot;name&quot;/&gt;</span><br><span class="line">   &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="iframe-链接"><a href="#iframe-链接" class="headerlink" title="iframe 链接"></a>iframe 链接</h3></li>
+</ol>
+<h2 id="第五-面试公司"><a href="#第五-面试公司" class="headerlink" title="第五 面试公司"></a>第五 面试公司</h2><h3 id="1-易保网络：前端开发实习生"><a href="#1-易保网络：前端开发实习生" class="headerlink" title="1.易保网络：前端开发实习生"></a>1.易保网络：前端开发实习生</h3><p><strong>职位描述：（先实习，有留用机会）</strong></p>
+<p>作为易保保险云中台产品（PaaS + SaaS）研发工程团队一员，参与大型全球保险业务运营商业应用数字化软件产品设计和开发。参与云解决方案、中台解决方案和传统软件解决方案的各项产品组件的设计、编程开发和测试。参与数字化解决方案的产品及项目的现场实施和维护工作。</p>
+<p><strong>任职要求：</strong></p>
+<ol>
+<li><p>本科及以上学历，计算机及相关专业的2022年毕业生；具备良好的英语读写能力优先；</p>
+</li>
+<li><p>热爱编程，熟悉web热门前端技术， React/Vue/TypeSrcript/Angular JS基础扎实；</p>
+</li>
+<li><p>了解或熟悉前端相关知识，HTML5/CSS/JavaScript</p>
+</li>
+<li><p>对微服务和微服务架构有理解， 有云服务开发和商业软件公司实习经历者优先；</p>
+</li>
+<li><p>思路清晰，沟通良好，有团队协作精神，执行力到位；</p>
+</li>
+<li><p>创新和持续改进能力强，善于团队协作和自我激励，对待工作精益求精、一丝不苟，具备逻辑思维与快速学习能力</p>
+</li>
+</ol>
+<h3 id="2-高知特：前端开发管培生"><a href="#2-高知特：前端开发管培生" class="headerlink" title="2.高知特：前端开发管培生"></a>2.高知特：前端开发管培生</h3><img src="D:\StudySource\DemoDateFile\TyporaFile\picture\32be33a6a7e850c4cf5f2a94e973b31.jpg" alt="32be33a6a7e850c4cf5f2a94e973b31" style="zoom: 33%;" />
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/html/" rel="tag"># html</a>
+              <a href="/tags/sql/" rel="tag"># sql</a>
+              <a href="/tags/http/" rel="tag"># http</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/26/github%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="github和hexo搭建个人博客">
+                  <i class="fa fa-chevron-left"></i> github和hexo搭建个人博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">罗乐恒</span>
+</div>
+<!---->
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
